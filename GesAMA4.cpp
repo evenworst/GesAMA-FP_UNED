@@ -4,9 +4,6 @@
 #include <ctype.h>
 
 #include "MenuGesAMA4.h"
-#include "TiposGesAMA4.h"
-
-
 
 
 
@@ -14,7 +11,10 @@ int main(){
 
     TipoMenu m;
 
+
+
     m.MenuPrincipal ();
+
 
 
 }

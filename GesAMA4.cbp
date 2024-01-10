@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="AlquilerGesAMA4.cpp" />
+		<Unit filename="CalendarioGesAMA.cpp" />
+		<Unit filename="CalendarioGesAMA.h" />
 		<Unit filename="GesAMA4.cpp" />
 		<Unit filename="MenuGesAMA4.cpp" />
 		<Unit filename="MenuGesAMA4.h" />

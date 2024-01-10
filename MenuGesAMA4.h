@@ -1,8 +1,7 @@
 #pragma once
 
 #include "TiposGesAMA4.h"
-
-
+#include "CalendarioGesAMA.h"
 
 typedef struct TipoMenu {
 
@@ -15,10 +14,15 @@ typedef struct TipoMenu {
     void MenuAlquiler ();
     void MenuListarAlquiler ();
     void MenuPlanMensual ();
+    void Calendario ();
+
+    int CosechasMes ();
+    int TotalDiasCosecha ();
+    int TiempoEsperas ();
+    bool MaquinaDisponible (RegTipoFecha fechafin, RegTipoFecha fechatraslado);
+
 
     void MenuPrint ();  // se puede eliminar
-
-
 
     char opcion;
 
@@ -29,8 +33,8 @@ typedef struct TipoMenu {
     int capacidad_maquina;
     float latitud_maquina;
     float longitud_maquina;
-    GestionMaquinaria a;
 
+    GestionMaquinaria a;
 
  // Variables TipoFinca
     int idfinca;
@@ -39,11 +43,25 @@ typedef struct TipoMenu {
     int capacidad_finca;
     float latitud_finca;
     float longitud_finca;
+
     GestionFincas b;
 
+
  // Variables TipoAlquiler
-    TipoFecha fechaini;
+    char confirma;
+    bool select;
+    RegTipoFecha fechaini;
+    RegTipoFecha fechafin;
+    RegTipoFecha fecha;
+    bool disponible;
+
     GestionAlquiler c;
+
+
+ // Variables Calendario
+
+    CalendarioGesAMA q;
+
 
 
 

@@ -13,7 +13,7 @@
   =================================================*/
 
 void GestionMaquinaria::Init (){
-  num_maquinas = 0;
+  num_maquinas = 3;
 
 // Se inicia el vector con datos null
   for (int i = 0; i < maxmaquinas; i++){
@@ -26,20 +26,7 @@ void GestionMaquinaria::Init (){
   }
 
 
-// Bucle para insertar demo data
-//    for (int j = 0; j < maxmaquinas; j = j+2){
-//
-//    VectorMaquinas[j].id = j;
-//    strcpy(VectorMaquinas[j].nombre_maquina,"");
-//    VectorMaquinas[j].cultivo_maquina = '.';
-//    VectorMaquinas[j].capacidad_maquina = 0;
-//    VectorMaquinas[j].latitud_maquina = 0;
-//    VectorMaquinas[j].longitud_maquina = 0;
-//
-//
-//
-//    }
-
+// DEMO DATA
 
     VectorMaquinas[0].id = 1;
     strcpy(VectorMaquinas[0].nombre_maquina,"Insignia");
@@ -62,6 +49,7 @@ void GestionMaquinaria::Init (){
     VectorMaquinas[6].latitud_maquina = 32.7;
     VectorMaquinas[6].longitud_maquina = -6.3;
 
+// FIN DEMO DATA
 
 }
 
@@ -71,7 +59,7 @@ void GestionMaquinaria::Init (){
   =================================================*/
 
 void GestionFincas::Init (){
-  num_fincas = 0;
+  num_fincas = 5;
 
 // Se inicia el vector con datos null
   for (int i = 0; i < maxfincas; i++){
@@ -88,7 +76,7 @@ void GestionFincas::Init (){
     VectorFincas[1].idfinca = 2;
     strcpy(VectorFincas[1].nombre_finca,"Bercial");
     VectorFincas[1].cultivo_finca = 'G';
-    VectorFincas[1].capacidad_finca = 94;
+    VectorFincas[1].capacidad_finca = 50;
     VectorFincas[1].latitud_finca = 38.231;
     VectorFincas[1].longitud_finca = -2.567;
 
@@ -133,6 +121,7 @@ void GestionFincas::Init (){
 void GestionMaquinaria::Borrar (int id){
 
 // FIXME (alumno#5#): Comprobar que id maquina existe antes de borrar para evitar la variable num_maquinas en negativo al eliminar un id vacio
+
     if (num_maquinas > 0){
 
         VectorMaquinas[id-1].id = 0;
@@ -160,7 +149,6 @@ void GestionMaquinaria::Borrar (int id){
 
 void GestionMaquinaria::InsertarMaquina(int id, TipoCadenaTexto nombre_maquina, char cultivo_maquina, int capacidad_maquina, float latitud_maquina, float longitud_maquina){
 
-// TODO (alumno#1#): Comprobar si maquina id ya existe y no aumentar contador. Hacer IF en modo inverso e incluir comprobacion TipoCultivo IF
     bool edit = false;
 
 
@@ -189,7 +177,6 @@ void GestionMaquinaria::InsertarMaquina(int id, TipoCadenaTexto nombre_maquina, 
       // Modo Insert
       } else if (num_maquinas < maxmaquinas){
             num_maquinas++;
-//            printf("Vector vacio\n");  // ELIMINAR LINEA
             printf("  -- Maquina Guardada -- \n");
 
             VectorMaquinas[id-1].id = id;
@@ -220,7 +207,6 @@ void GestionMaquinaria::ListarMaquinas (){
 
     TipoCadenaTexto t; // variable para almacenar el tipo cultivo en texto
     char filtromaq; // variable para filtrar las maquinas segun tipo
-//    int str;
 
     printf("\n");
     printf("Tipo de maquinas a listar (G-Grano, U-Uva, A-Aceituna, T-Todas)?");
@@ -230,14 +216,6 @@ void GestionMaquinaria::ListarMaquinas (){
 
 // TODO (alumno#5#): Poner condicion para solo aceptar los caracteres validos
 
-//      str strcmp = (&filtromaq,
-//        while (filtromaq != 'G' || filtromaq != 'A' || filtromaq != 'U' || filtromaq != 'T'){
-//            printf("Inserta un filtro valido (G-Grano, U-Uva, A-Aceituna, T-Todas)?");
-//            scanf("%c", &filtromaq);
-//            fflush(stdin);
-//        }
-
-//    printf("Funcion listar maquinas AQUI var num_maquinas = %d\n", num_maquinas);  // ELIMINAR
     printf("\n");
 
 // TODO (alumno#1#): Tabular listado con funcion rellenando espacios en blanco
@@ -338,9 +316,7 @@ void GestionFincas::Borrar (int idfinca){
 
 void GestionFincas::InsertarFinca (int idfinca, TipoCadenaTexto nombre_finca, char cultivo_finca, int capacidad_finca, float latitud_finca, float longitud_finca){
 
-// TODO (alumno#1#): Comprobar si maquina id ya existe y no aumentar contador. Hacer IF en modo inverso e incluir comprobacion TipoCultivo IF
     bool edit = false;
-
 
     for (int i = 0; i < maxfincas; i++){
         if (VectorFincas[i].idfinca == idfinca) {
@@ -367,7 +343,6 @@ void GestionFincas::InsertarFinca (int idfinca, TipoCadenaTexto nombre_finca, ch
       // Modo Insert
       } else if (num_fincas < maxfincas){
             num_fincas++;
-//            printf("Vector vacio\n");  // ELIMINAR LINEA
             printf("  -- Finca Guardada -- \n");
 
             VectorFincas[idfinca-1].idfinca = idfinca;
@@ -399,7 +374,6 @@ void GestionFincas::ListarFincas (){
 
     TipoCadenaTexto t; // variable para almacenar el tipo cultivo en texto
     char filtrofinc; // variable para filtrar las fincas segun tipo
-//    int str;
 
     printf("\n");
     printf("Estado de fincas a listar (G-Grano, U-Uva, A-Aceituna, T-Todas)?");
@@ -408,15 +382,6 @@ void GestionFincas::ListarFincas (){
     filtrofinc = toupper(filtrofinc);
 
 // TODO (alumno#5#): Poner condicion para solo aceptar los caracteres validos
-
-//      str strcmp = (&filtromaq,
-//        while (filtromaq != 'G' || filtromaq != 'A' || filtromaq != 'U' || filtromaq != 'T'){
-//            printf("Inserta un filtro valido (G-Grano, U-Uva, A-Aceituna, T-Todas)?");
-//            scanf("%c", &filtromaq);
-//            fflush(stdin);
-//        }
-
-//    printf("Funcion listar maquinas AQUI var num_maquinas = %d\n", num_maquinas);  // ELIMINAR
 
     printf("\n");
 
