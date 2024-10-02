@@ -12,8 +12,8 @@
     Metodo para iniciar vector y contador maquinas
   =================================================*/
 
-void GestionMaquinaria::Init (){
-  num_maquinas = 3;
+void GestionMaquinaria::Init (char opciondemo){
+  num_maquinas = 0;
 
 // Se inicia el vector con datos null
   for (int i = 0; i < maxmaquinas; i++){
@@ -27,6 +27,8 @@ void GestionMaquinaria::Init (){
 
 
 // DEMO DATA
+  if (toupper(opciondemo) == 'D'){
+    num_maquinas = 3;
 
     VectorMaquinas[0].id = 1;
     strcpy(VectorMaquinas[0].nombre_maquina,"Insignia");
@@ -49,7 +51,9 @@ void GestionMaquinaria::Init (){
     VectorMaquinas[6].latitud_maquina = 32.7;
     VectorMaquinas[6].longitud_maquina = -6.3;
 
+  }
 // FIN DEMO DATA
+
 
 }
 
@@ -445,7 +449,4 @@ void GestionFincas::ListarFincas (){
   printf("\n");
 
 }
-
-
-
 
