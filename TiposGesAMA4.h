@@ -80,9 +80,10 @@ typedef struct TipoAlquiler {
 
 typedef struct GestionMaquinaria {
 
+
+    void Init (char opciondemo); // Inicializa vectores y variables
     void InsertarMaquina(int id, TipoCadenaTexto nombre_maquina, char cultivo_maquina, int capacidad_maquina, float latitud_maquina, float longitud_maquina); // Metodo para insertar un elemento en el vector maquinas
     void ListarMaquinas (); // Metodo para listar maquinas
-    void Init (); // Inicializa vectores y variables
     void Borrar (int id); // Metodo para borrar un elemento del vector maquinas
 
 
@@ -139,25 +140,4 @@ typedef struct GestionAlquiler {
 
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
