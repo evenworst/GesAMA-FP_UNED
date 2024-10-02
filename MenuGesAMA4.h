@@ -5,6 +5,7 @@
 
 typedef struct TipoMenu {
 
+    void MenuStartScreen();
     void MenuPrincipal();
     void MenuRegreso ();
     void MenuEditarMaquina ();
@@ -25,6 +26,8 @@ typedef struct TipoMenu {
     void MenuPrint ();  // se puede eliminar
 
     char opcion;
+    char opciondemo;
+    bool demo;
 
  // Variables TipoMaquina
     int id;
