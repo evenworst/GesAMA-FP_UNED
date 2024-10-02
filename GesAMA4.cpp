@@ -11,8 +11,6 @@ int main(){
 
     TipoMenu m;
 
-
-
     m.MenuPrincipal ();
 
 
