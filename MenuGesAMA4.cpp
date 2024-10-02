@@ -8,6 +8,35 @@
 
 
 
+/*===================================================
+  Metodo Menu Regreso
+  =================================================*/
+
+
+//void TipoMenu::MenuStartScreen() {
+//
+//      printf("\n\n"); // saltos de linea por estilo
+//      printf("  ********    GesAMA: Gestion de Alquiler de Maquinas Agricolas    ********\n\n");
+//      printf("  - Bienvenido al software de gestion de alquiler de maquinaria agricola GesAMA \n");
+//      printf("  - para probar el software pulse D y se iniciara automaticamente con datos de demo \n");
+//      printf("  - si desea un inicio sin datos pulse B \n");
+//
+//      printf(" Pulsar (D) Demo data / (B) Inicio sin datos");
+//      scanf("%c", option);
+//      fflush(stdin);
+//
+//      switch (toupper(option)){
+//        case 'D':
+//
+//              break;
+//        case 'B':
+//
+//              break;
+//        default:
+//
+//
+//
+//}
 
 
 
@@ -32,9 +61,22 @@ void TipoMenu::MenuRegreso(){
 void TipoMenu::MenuPrincipal (){
 
   system("cls");
-  a.Init(); // inicializo contador vector maquinas
+
   b.Init(); // incializo contador vector fincas
   c.Init(); // incializo contador vector alquiler
+
+  demo = false;
+
+if (demo == false){
+      printf(" Pulsar (D) Demo data / (B) Inicio sin datos");
+      scanf("%c", &opciondemo);
+      fflush(stdin);
+
+      a.Init(opciondemo); // inicializo contador vector maquinas
+
+      demo = true;
+}
+
 
   do {
 
@@ -111,6 +153,8 @@ void TipoMenu::MenuPrincipal (){
             MenuRegreso();
         }
   } while (toupper(opcion) != 'S');
+
+
 
 }
 
@@ -677,6 +721,7 @@ void  TipoMenu::Calendario(){
   int coscalendar = 0;
   int mostrarc;
   int finalq;
+
 //  bool previo = false;
 //  int duracion;
 //  int idfinca;
@@ -687,7 +732,7 @@ void  TipoMenu::Calendario(){
                     for (int j = 0; j < q.FuncDiadelaSemana(fecha); j++){  // FuncDiaSemana devuelve el dia de la semana para empezar a numerar los dias
 
                         if (j % 7 == 4){
-                          printf(" %c  ", marcador); // Condicional para imprimir solo un espacio antes de la barra separadora
+                          printf(" %c  ", marcador);
 
                         } else {
                           printf(" %c  ", marcador);
@@ -725,7 +770,24 @@ void  TipoMenu::Calendario(){
 
 
 
+// INICIO IF PARA COMPROBAR EL ALQUILER A MOSTRAR EN EL CALENDARIO
+
                           if ( cn == false) {
+
+
+//                                  if (
+//                                    ( c.VectorAlquileres[k].fechaalquiler.mes == fecha.mes || c.VectorAlquileres[k].fechafinalq.mes == fecha.mes ) &&
+//                                    ( c.VectorAlquileres[k].fechaalquiler.anno == fecha.anno || c.VectorAlquileres[k].fechafinalq.anno == fecha.anno) ) {
+//                                      previo = true;
+//                                    }
+
+
+
+
+//( c.VectorAlquileres[k].fechaalquiler.mes == fecha.mes) && c.VectorAlquileres[k].fechaalquiler.anno == fecha.anno
+
+
+
 
 
                                   if ( ( mostrarc == i) && ( c.VectorAlquileres[k].fechaalquiler.mes == fecha.mes) && c.VectorAlquileres[k].fechaalquiler.anno == fecha.anno && maq == a.VectorMaquinas[id-1].id){
@@ -740,7 +802,11 @@ void  TipoMenu::Calendario(){
                                     cn = true;
                                   }
 
+
                           }
+
+// FIN IF PARA COMPROBAR EL ALQUILER A MOSTRAR EN EL CALENDARIO
+
 
 
                       }// fin for alquiler
@@ -774,6 +840,7 @@ void  TipoMenu::Calendario(){
 
                     } else {
                       printf(" %c  ", marcador);
+
                     }
 
                   indice++;
