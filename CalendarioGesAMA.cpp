@@ -120,7 +120,7 @@ void CalendarioGesAMA::ProcCabeceraDatos(int month, int year){
   printf("               "); // Tabular el calendario
   printf("%s", mes_letra[month-1]);
 
-      for (int i = 0; i<=linea-len; i++){ // bucle para alinear la cabecera del mes y año a la hoja del calendario
+      for (int i = 0; i<=linea-len; i++){ // bucle para alinear la cabecera del mes y aÃ±o a la hoja del calendario
         printf("%c", blanco);
         }
 
@@ -214,7 +214,7 @@ TipoDia CalendarioGesAMA::FuncDiadelaSemana( RegTipoFecha fecha) {
     IncreDias = 5;
     }
 
-// Calculamos los años bisiestos desde la fecha inicial
+// Calculamos los aÃ±os bisiestos desde la fecha inicial
 
   for (int i = anoinicial; i <= fecha.anno; i++){
     if ( FuncCalcularBisiesto(i)){
@@ -507,26 +507,5 @@ bool CalendarioGesAMA::FechaPosterior ( RegTipoFecha fecha1, RegTipoFecha fecha2
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
