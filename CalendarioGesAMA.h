@@ -9,7 +9,7 @@
 
 
 typedef char tipoCadena[30];  // Tipo definido para mostrar cadenas de texto de hasta 30 caracteres
-typedef tipoCadena tipoMonths [12]; // Tipo definido para los meses del año como string
+typedef tipoCadena tipoMonths [12]; // Tipo definido para los meses del aÃ±o como string
 //tipoMonths mes_letra = {"ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE" };
 
 
@@ -57,49 +57,3 @@ typedef struct CalendarioGesAMA  {
 
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
